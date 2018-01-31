@@ -163,10 +163,10 @@ public class RouterRequest {
         headers = Headers(headers: serverRequest.headers)
     }
 
-    /// Convert query parameters into QueryParam type
+    /// Convert query parameters into a QueryParam type
     ///
     /// - Parameter type: The QueryParam type describing the expected query parameters
-    /// - Returns: Query parameters as a QueryParam obejct
+    /// - Returns: The route's Query parameters as a QueryParam object
     public func getQueryParameters<T: QueryParams>(as type: T.Type) -> T? {
         return try? QueryDecoder(dictionary: self.queryParameters).decode(type)
     }
